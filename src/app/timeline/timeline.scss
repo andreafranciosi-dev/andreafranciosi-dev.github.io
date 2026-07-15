@@ -13,16 +13,16 @@
 }
 
 .timeline-element-left {
-  border-right: 1px solid var(--color-timeline);
+  border-right: 1px solid var(--color-orange);
 }
 
 .timeline-element-right {
-  border-left: 1px solid var(--color-timeline);
+  border-left: 1px solid var(--color-orange);
 }
 
 .timeline-date {
   font-size: clamp(0.7rem, 2vw, 1.5rem);
-  color: var(--color-timeline);
+  color: var(--color-orange);
   margin-bottom: 0px;  
   transform: translateY(-20%);
 }
@@ -48,7 +48,7 @@ img.img-fluid {
   width: var(--dot-size);
   height: var(--dot-size);
   border-radius: 50%;
-  background-color: var(--color-timeline);
+  background-color: var(--color-orange);
   top: 50%;
 }
 

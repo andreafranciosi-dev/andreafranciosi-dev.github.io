@@ -17,8 +17,10 @@ constructor(private router: Router,
 
   ngOnInit(): void {
     this.navBarItems = [
-      { label: 'Home', visible: true, /*route: '/Portfolio/',*/ action: () => this.goToSection('home')},
-      { label: 'Timeline', visible: true, /*route: '/Timeline/',*/ action: () => this.goToSection('timeline')}      
+      { label: 'Home', icon: 'bi bi-house-door-fill', visible: true, /*route: '/Portfolio/',*/ action: () => this.goToSection('home')},
+      { label: 'Timeline', icon: '', visible: true, /*route: '/Timeline/',*/ action: () => this.goToSection('timeline')},
+      { label: 'Curriculum', icon: '', visible: true, /*route: '/Curriculum/',*/ action: () => this.goToSection('curriculum')},
+      { label: 'Contacts', icon: '', visible: true, /*route: '/Contacts/',*/ action: () => this.goToSection('contacts')}
     ].filter(i => i.visible);    
   }
 

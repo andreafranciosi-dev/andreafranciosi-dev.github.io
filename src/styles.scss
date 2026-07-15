@@ -2,14 +2,15 @@
 
 :root {
   --color-bg: rgb(245, 245, 245);
-  --color-timeline: #ff9827;
+  --color-nav-border: rgb(33, 37, 41);
+  --color-orange: #ff9827;
   --dot-size: clamp(0.9rem, 2.5vw, 1.5rem);
 }
 
 html, body { height: 100%; }
 body { 
   margin: 0; 
-  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  font-family: Saira, "Helvetica Neue", sans-serif; 
   background-color: var(--color-bg);
 }
 

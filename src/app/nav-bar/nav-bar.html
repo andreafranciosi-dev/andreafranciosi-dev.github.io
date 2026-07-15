@@ -7,7 +7,9 @@
       <ul class="navbar-nav">          
         @for (item of navBarItems; track item.label; let last = $last) {
           <li class="nav-item d-flex align-items-center">
-            <a class="navbar-item" role="button" (click)="item.action?.()">{{ item.label }}</a>
+            <a class="navbar-item" role="button" (click)="item.action?.()">
+              @if (item.icon) {<i [class]="item.icon"></i>} 
+              {{ item.label }}</a>
             @if(!last) {<span class="vr mx-2"></span>}
           </li>          
         }
