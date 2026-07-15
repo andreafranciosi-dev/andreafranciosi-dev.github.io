@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/scss/bootstrap';
+
+:root {
+  --color-bg: rgb(245, 245, 245);
+  --color-timeline: #ff9827;
+  --dot-size: clamp(0.9rem, 2.5vw, 1.5rem);
+}
+
+html, body { height: 100%; }
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  background-color: var(--color-bg);
+}
+
+//Gestisce il colore della scritta nelle tab inattive della navbar
+.nav-link, .navbar-nav .nav-link.show{
+  color: var(--bs-body-color);
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: var(--bs-body-color);
+  cursor: pointer;
+}
+
+.nav-link.active {
+  background-color: var(--color-bg-card) !important;
+  border-color: var(--color-border-card) !important;
+  border-bottom-color: var(--color-bg-card) !important;
+}
+
+//Gestisce il colore della scritta nelle tab attive della navbar
+.active {
+  color : crimson !important;
+}

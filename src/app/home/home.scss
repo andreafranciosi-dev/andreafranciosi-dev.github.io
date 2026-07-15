@@ -1,0 +1,38 @@
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.hero {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // riempie lo spazio senza deformarsi
+  z-index: -1; // va dietro al contenuto
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 40px; // o quello che preferisci, per non far attaccare il testo ai bordi
+  color: white; // probabilmente ti serve un colore chiaro per leggere il testo sopra la foto
+}
+
+/*.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); // regola opacità a piacere
+  z-index: 0;
+}*/

@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-xl">  
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" [routerLink]="session.getHomeRoute()" >
+      <img src="assets/FM3xDelivery.png" width="30" height="30" alt="">
+    </a> -->
+    @if (navBarItems.length > 1) {
+      <ul class="navbar-nav">          
+        @for (item of navBarItems; track item.label; let last = $last) {
+          <li class="nav-item d-flex align-items-center">
+            <a class="navbar-item" role="button" (click)="item.action?.()">{{ item.label }}</a>
+            @if(!last) {<span class="vr mx-2"></span>}
+          </li>          
+        }
+      </ul>
+    }
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">        
+      <ul class="navbar-nav me-auto mb-lg-0">            
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+            Palmarino
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" role="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" >Colli</a></li>
+            <li><a class="dropdown-item" role="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" >Packaging</a></li>
+          </ul>
+        </li> -->
+      </ul>
+      <div>     
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">                    
+          <li class="nav-item dropdown">
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown2">                  
+              <li><a class="dropdown-item" role="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" (click)="openUserManual()">Manuale d'uso</a></li>
+              <li>
+                <div class="form-check form-switch d-flex justify-content-between" style="padding-left: 16px; padding-right: 20px;">
+                  <span>Dark Mode</span>
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" (change)="toggleDarkMode($event)" value="true">
+                </div>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" role="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" (click)="logout()">Log out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,31 @@
+nav {  
+   background-color: var(--color-nav-bar); 
+   border-bottom: 1px solid var(--color-nav-border);
+}
+
+.navbar-item {
+  color: var(--color-nav-bar-text);
+  font-size: 20px;    
+}
+
+.nav-divider { 
+  display: flex; 
+  align-items: 
+  center; 
+  margin: 0 8px;
+}
+
+.vr { 
+  width: 1px;
+  height: 30px; 
+  color: rgba($color: var(--color-nav-border), $alpha: 1.0); 
+  display:block;     
+}
+
+.navbar-item {
+  text-decoration: none;
+}
+
+.navbar-item:hover {
+  text-decoration: underline;
+}
