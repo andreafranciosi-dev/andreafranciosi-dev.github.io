@@ -1,11 +1,23 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 1030; // stesso z-index che userebbe fixed-top/sticky-top di Bootstrap
+}
+
 nav {  
-   background-color: var(--color-orange); 
-   border-bottom: 1px solid var(--color-nav-border);
+  background-color: var(--color-orange); 
+  border-bottom: 1px solid var(--color-nav-border);
 }
 
 .navbar-item {
   color: var(--color-nav-bar-text);
   font-size: 20px;    
+  text-decoration: none;  
+}
+
+.navbar-item:hover {
+  text-decoration: underline;
 }
 
 .nav-divider { 
@@ -22,10 +34,7 @@ nav {
   display:block;     
 }
 
-.navbar-item {
-  text-decoration: none;
-}
-
-.navbar-item:hover {
-  text-decoration: underline;
+.offcanvas {
+  background-color: var(--color-orange);
+  color: var(--color-nav-bar-text);
 }

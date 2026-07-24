@@ -1,52 +1,47 @@
 <nav class="navbar navbar-expand-xl">  
   <div class="container-fluid">
-    <!-- <a class="navbar-brand" [routerLink]="session.getHomeRoute()" >
-      <img src="assets/FM3xDelivery.png" width="30" height="30" alt="">
-    </a> -->
+
+    <!-- Voci di navigazione principali: visibili sempre su desktop (xl+) -->
     @if (navBarItems.length > 1) {
-      <ul class="navbar-nav">          
+      <ul class="navbar-nav d-none d-xl-flex flex-row">          
         @for (item of navBarItems; track item.label; let last = $last) {
           <li class="nav-item d-flex align-items-center">
-            <a class="navbar-item" role="button" (click)="item.action?.()">
-              @if (item.icon) {<i [class]="item.icon"></i>} 
+            <a class="navbar-item" role="button" [routerLink]="item.route" routerLinkActive="active" (click)="item.action?.()">
+              @if (item.icon) 
+              {<i [class]="item.icon"></i>} 
               {{ item.label }}</a>
             @if(!last) {<span class="vr mx-2"></span>}
           </li>          
         }
       </ul>
     }
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <!-- Bottone hamburger: visibile solo sotto xl -->
+    <button class="navbar-toggler d-xl-none" type="button" (click)="toggleOffcanvas()" aria-controls="mobileMenu" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button> 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">        
-      <ul class="navbar-nav me-auto mb-lg-0">            
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
-            Palmarino
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" role="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" >Colli</a></li>
-            <li><a class="dropdown-item" role="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" >Packaging</a></li>
-          </ul>
-        </li> -->
-      </ul>
-      <div>     
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">                    
-          <li class="nav-item dropdown">
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown2">                  
-              <li><a class="dropdown-item" role="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" (click)="openUserManual()">Manuale d'uso</a></li>
-              <li>
-                <div class="form-check form-switch d-flex justify-content-between" style="padding-left: 16px; padding-right: 20px;">
-                  <span>Dark Mode</span>
-                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" (change)="toggleDarkMode($event)" value="true">
-                </div>
-              </li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" role="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" (click)="logout()">Log out</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
+    </button>
   </div>
 </nav>
+
+<!-- Offcanvas: contiene tutto il menu su mobile -->
+<div class="offcanvas offcanvas-start" style="--bs-offcanvas-width: 50%;" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+  <div class="offcanvas-header">
+    <!-- <h5 class="offcanvas-title" id="mobileMenuLabel">Menu</h5> -->
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column">
+    @if (navBarItems.length > 1) {
+      <ul class="navbar-nav">          
+        @for (item of navBarItems; track item.label) {
+          <li class="nav-item" style="margin: 8px 0;">
+            <a class="navbar-item" role="button" [routerLink]="item.route" routerLinkActive="active" (click)="item.action?.(); closeOffcanvas()">
+              {{ item.label }}
+              @if (item.icon) 
+              {<i [class]="item.icon" class="me-2"></i>} 
+            </a>
+          </li>             
+        }
+      </ul>
+    }
+  </div>
+</div>

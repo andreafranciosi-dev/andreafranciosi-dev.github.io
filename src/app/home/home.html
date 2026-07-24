@@ -1,4 +1,4 @@
-<section id="home" class="hero">
+<section id="home" class="hero mb-5">
   <img src="images/Background.jpg" alt="Background" class="hero-bg">  
   <div class="hero-content">    
     <h1>Andrea</h1>
@@ -6,6 +6,28 @@
     <h2>Full Stack Developer</h2>  
   </div>
 </section>
-<app-timeline id="timeline"></app-timeline>
-<app-curriculum id="curriculum"></app-curriculum>
-<app-contacts id="contacts"></app-contacts>
+<section id="portfolio">
+  <div class="container pt-5 pb-5 text-center">
+    <h3><strong>Portfolio</strong></h3>
+    <h5>Qui potrai vedere il mio lavoro e i miei progetti</h5>
+  </div>
+  <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+    <a routerLink="/videogames-pc-console" class="button">
+      <img src="images/WildRescue.jpg" class="img-fluid rounded">
+      <div class="button-banner"><h4>Videogiochi Pc/Console</h4></div>
+    </a>
+    <a routerLink="/mobile-hypercasual" class="button">
+      <img src="images/Hypercasual.png" class="img-fluid rounded">
+      <div class="button-banner"><h4>Mobile Hypercasual</h4></div>
+    </a>
+    <a routerLink="/software-gestionale" class="button">
+      <img src="images/SitoCorrieri.png" class="img-fluid rounded">
+      <div class="button-banner"><h4>Software Gestionale</h4></div>
+    </a>
+  </div>
+</section>
+<div class="container">
+  <app-timeline id="timeline" class="pt-5 pb-5"></app-timeline>
+  <app-curriculum id="curriculum" class="pt-5 pb-5"></app-curriculum>
+  <app-contacts id="contacts" class="pt-5 pb-5"></app-contacts>
+</div>

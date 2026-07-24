@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 .contacts-element {
   display: flex;
   flex-direction: column;
@@ -5,6 +9,13 @@
   justify-content: center;
   text-align: center;
   margin-bottom: 20px;
+  min-width: 0; // permette al flex item di restringersi sotto il contenuto
+
+  a.button {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+  }
 }
 
 i {

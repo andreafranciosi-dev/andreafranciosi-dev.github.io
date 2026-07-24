@@ -1,0 +1,53 @@
+h1 {
+  color: var(--color-orange);
+  font-size: 8dvh;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2.title {
+  font-size: 5dvh;
+  font-weight: bold;
+}
+
+h3 {
+  text-align: center;
+}
+
+.btn-danger {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-weight: bold;
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+  z-index: 1; // per stare sopra allo pseudo-elemento
+
+  // Il testo deve restare sopra l'animazione
+  span, i {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.btn-danger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: white;
+  transition: width 0.3s ease;
+  z-index: 1;
+}
+
+.btn-danger:hover {
+  color: var(--color-orange);
+  border-color: var(--color-orange);
+  font-weight: bold;
+
+  &::before {
+    width: 100%;
+  }
+}

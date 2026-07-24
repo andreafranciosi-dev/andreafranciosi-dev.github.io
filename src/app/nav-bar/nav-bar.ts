@@ -1,23 +1,27 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { Offcanvas } from 'bootstrap';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,  
+  imports: [RouterLink],
   templateUrl: './nav-bar.html',
   styleUrl: './nav-bar.scss',
 })
 export class NavBar implements OnInit {
 constructor(private router: Router,
-    private route: ActivatedRoute    
+    private route: ActivatedRoute
   ) { }
 
   navBarItems: any;
+  offcanvasOpening = false;
 
   ngOnInit(): void {
     this.navBarItems = [
-      { label: 'Home', icon: 'bi bi-house-door-fill', visible: true, /*route: '/Portfolio/',*/ action: () => this.goToSection('home')},
+      { label: 'Home', icon: 'bi bi-house-door-fill', visible: true, route: '/Home/', action: () => this.goToSection('home')},
+      { label: 'Portfolio', icon: '', visible: true, /*route: '/Portfolio/',*/ action: () => this.goToSection('portfolio')},
       { label: 'Timeline', icon: '', visible: true, /*route: '/Timeline/',*/ action: () => this.goToSection('timeline')},
       { label: 'Curriculum', icon: '', visible: true, /*route: '/Curriculum/',*/ action: () => this.goToSection('curriculum')},
       { label: 'Contacts', icon: '', visible: true, /*route: '/Contacts/',*/ action: () => this.goToSection('contacts')}
@@ -25,22 +29,32 @@ constructor(private router: Router,
   }
 
   goToSection(sectionName: string) {
-    const element = document.getElementById(sectionName);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (this.router.url === '/') {
+      document.getElementById(sectionName)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => {
+          document.getElementById(sectionName)?.scrollIntoView({ behavior: 'smooth' });
+        }, 100); // piccolo delay per dare tempo al DOM di renderizzare la Home
+      });
+    }
+  }
+  
+  toggleOffcanvas() {
+    if (this.offcanvasOpening) return;
+    this.offcanvasOpening = true;
+    
+    const el = document.getElementById('mobileMenu');
+    if (el) {
+      Offcanvas.getOrCreateInstance(el).toggle();
+    }
+    
+    setTimeout(() => this.offcanvasOpening = false, 350);
   }
 
-  logout() {
-    console.log("Logout")
-    this.router.navigate(['login'], {relativeTo: this.route});
-  }
-
-  openUserManual() {
-    const pdfURL = "assets/ManualeSitoSpedizioni.pdf";
-    window.open(pdfURL, '_blank');
-  }
-
-  toggleDarkMode(event: Event) {
-    const checkbox = event.target as HTMLInputElement;    
-    document.body.classList.toggle('dark-mode', checkbox.checked)
+  closeOffcanvas() {
+    const el = document.getElementById('mobileMenu');
+    if (el)     
+      Offcanvas.getOrCreateInstance(el).hide();    
   }
 }
