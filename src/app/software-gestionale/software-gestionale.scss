@@ -45,3 +45,33 @@ swiper-container {
     max-height: 100%;
     object-fit: contain;
 }
+
+.image-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.image-overlay img {
+  max-width:90%;
+  max-height:90%;
+  border-radius:20px;
+}
+
+.mobile-image {
+  width: 24%;
+  margin: 2px;
+}
+
+@media (max-width: 768px) {
+
+    .mobile-image {
+      width: 45%;
+      margin: 2px;
+    }
+
+}

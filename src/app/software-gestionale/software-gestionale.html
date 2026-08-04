@@ -38,7 +38,7 @@
   <p class="text-center mt-5 mb-5">Si suddivide in 3 diverse sezioni selezionabili tramite la barra di navigazione.</p>
   <div class="row text-center">
     <div class="col-md-4 mb-5">
-      <h2 class="pt-3">Spedizioni <i class="bi bi-box"></i></h2>
+      <h2 class="pt-3">Spedizioni <i class="bi bi-box-seam"></i></h2>
       <p>In questa sezione vengono visualizzati tutti gli ordini in arrivo dal gestionale aziendale.<br>
         L'utente può selezionare un ordine e procedere con la preparazione della spedizione.
       </p>
@@ -57,7 +57,7 @@
     </div>
   </div>  
   <swiper-container
-    class="mySwiper"
+    class="mySwiper mb-5"
     effect="coverflow"
     navigation="true"
     pagination="true"
@@ -67,25 +67,56 @@
     space-between="30">
 
     <swiper-slide>
-      <img src="images/SoftwareGestionale/SezioneSpedizioni.png" class="img-fluid rounded shadow-jpg">        
+      <img src="images/SoftwareGestionale/SezioneSpedizioni.png" class="img-fluid rounded shadow-jpg" (click)="openImageDetails('images/SoftwareGestionale/SezioneSpedizioni.png')">        
     </swiper-slide>
     <swiper-slide>        
-      <img src="images/SoftwareGestionale/SezioneEcommerce.png" class="img-fluid rounded shadoxw-jpg">
+      <img src="images/SoftwareGestionale/SezioneEcommerce.png" class="img-fluid rounded shadoxw-jpg" (click)="openImageDetails('images/SoftwareGestionale/SezioneEcommerce.png')">
     </swiper-slide>
     <swiper-slide>        
-      <img src="images/SoftwareGestionale/SezioneResi.png" class="img-fluid rounded shadow-jpg">    
+      <img src="images/SoftwareGestionale/SezioneResi.png" class="img-fluid rounded shadow-jpg" (click)="openImageDetails('images/SoftwareGestionale/SezioneResi.png')">
     </swiper-slide>
   </swiper-container>  
+  <h2 class="pt-3 text-center">Preparazione ordini</h2>
+  <div class="row d-flex justify-content-center text-center pt-5">
+    <div class="col-md-4">
+      <p>Descrizione</p>
+    </div>
+    <div class="col-md-8">
+      <swiper-container
+        class="mySwiper mb-5"
+        effect="coverflow"
+        navigation="true"
+        pagination="true"
+        centered-slides="true"
+        loop="false"
+        slides-per-view="2.5"
+        space-between="30">
+
+        <swiper-slide>
+          <img src="images/SoftwareGestionale/lavorazione1.png" class="img-fluid rounded shadow-jpg" (click)="openImageDetails('images/SoftwareGestionale/lavorazione1.png')">        
+        </swiper-slide>
+        <swiper-slide>        
+          <img src="images/SoftwareGestionale/lavorazione2.png" class="img-fluid rounded shadoxw-jpg" (click)="openImageDetails('images/SoftwareGestionale/lavorazione2.png')">
+        </swiper-slide>
+        <swiper-slide>        
+          <img src="images/SoftwareGestionale/lavorazione3.png" class="img-fluid rounded shadow-jpg" (click)="openImageDetails('images/SoftwareGestionale/lavorazione3.png')">
+        </swiper-slide>
+        <swiper-slide>        
+          <img src="images/SoftwareGestionale/lavorazione4.png" class="img-fluid rounded shadow-jpg" (click)="openImageDetails('images/SoftwareGestionale/lavorazione4.png')">
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  </div>
 </div>
 
-<ng-template #imageModal id="imageModal" let-modal>
-  <div class="modal-header">
-    <!-- <h4 class="modal-title">
-      <ng-container style="display: block; width: 100%;">{{this.selectedImage}} <i class="bi bi-image"></i></ng-container>
-    </h4> -->
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+@if (selectedImage) {
+  <div 
+    class="image-overlay"
+    (click)="closeImage()">
+
+    <img 
+      [src]="selectedImage"
+      (click)="$event.stopPropagation()">
+
   </div>
-  <div class="modal-body text-center">
-    <img [src]="this.selectedImage" style="max-width: 100%;">    
-  </div>  
-</ng-template>
+}
