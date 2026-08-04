@@ -1,0 +1,47 @@
+h1 {
+  color: var(--color-orange);
+  font-size: 8dvh;
+  font-weight: bold;
+  text-align: center;
+}
+
+.shadow-jpg {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px; // opzionale, spesso sta bene insieme
+}
+
+.shadow-png {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+}
+
+.mySwiper {
+  width: 100%;
+}
+
+swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+swiper-slide img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(94, 42, 42, 0.3);
+}
+
+swiper-container {
+  --swiper-theme-color: var(--color-orange) !important;
+}
+
+.carrier-logo {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrier-logo img {
+    max-width: 80%;
+    max-height: 100%;
+    object-fit: contain;
+}

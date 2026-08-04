@@ -1,4 +1,9 @@
 @import 'bootstrap/scss/bootstrap';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/effect-coverflow';
+@import "bootstrap/dist/css/bootstrap.min.css";
 
 :root {
   --color-bg: rgb(245, 245, 245);
