@@ -27,6 +27,7 @@ swiper-slide img {
   width: 100%;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(94, 42, 42, 0.3);
+  cursor: pointer;
 }
 
 swiper-container {
@@ -38,6 +39,7 @@ swiper-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px 0;
 }
 
 .carrier-logo img {

@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: './curriculum.html',
   styleUrl: './curriculum.scss',
 })
-export class Curriculum {}
+export class Curriculum {
+
+  openCurriculum() {
+    window.open('assets/cv.pdf', '_blank');
+  }
+}

@@ -6,12 +6,13 @@
       <h5>Software gestionale per la logistica aziendale</h5>
     </div>
     <p>Dialoga col software gestionale aziendale e permette di gestire l'intero processo logistico:<br>
-      <i class="bi bi-check-square-fill" style="color: lightgreen;"></i> Monitoraggio ordini<br>
-      <i class="bi bi-check-square-fill" style="color: lightgreen;"></i> Lavorazione e convalida ordini<br>
-      <i class="bi bi-check-square-fill" style="color: lightgreen;"></i> Stampa diretta delle etichette<br>
-      <i class="bi bi-check-square-fill" style="color: lightgreen;"></i> Tracking spedizioni<br>
-      <i class="bi bi-check-square-fill" style="color: lightgreen;"></i> Segnalazione automatica spedizioni in ritardo<br>
-      <i class="bi bi-check-square-fill" style="color: lightgreen;"></i> Gestioni dei resi<br>
+      <i class="bi bi-search" style="color: var(--color-orange);"></i> Monitoraggio ordini <i class="bi bi-check-square-fill" style="color: lightgreen;"></i><br> 
+      <i class="bi bi-tools" style="color: var(--color-orange);"></i> Lavorazione e convalida ordini <i class="bi bi-check-square-fill" style="color: lightgreen;"></i><br> 
+      <i class="bi bi-printer" style="color: var(--color-orange);"></i> Stampa diretta delle etichette <i class="bi bi-check-square-fill" style="color: lightgreen;"></i><br> 
+      <i class="bi bi-envelope" style="color: var(--color-orange);"></i> Invio automatico di mail sullo stato dell'ordine al cliente <i class="bi bi-check-square-fill" style="color: lightgreen;"></i><br> 
+      <i class="bi bi-truck" style="color: var(--color-orange);"></i> Tracking spedizioni <i class="bi bi-check-square-fill" style="color: lightgreen;"></i><br> 
+      <i class="bi bi-exclamation-triangle" style="color: var(--color-orange);"></i> Segnalazione automatica spedizioni in ritardo <i class="bi bi-check-square-fill" style="color: lightgreen;"></i><br> 
+      <i class="bi bi-arrow-counterclockwise" style="color: var(--color-orange);"></i> Gestioni dei resi <i class="bi bi-check-square-fill" style="color: lightgreen;"></i><br> 
       <br>
     </p>
     <b class="text-center">Angular - Spring Boot - SQL - Bootstrap</b>
@@ -76,10 +77,17 @@
       <img src="images/SoftwareGestionale/SezioneResi.png" class="img-fluid rounded shadow-jpg" (click)="openImageDetails('images/SoftwareGestionale/SezioneResi.png')">
     </swiper-slide>
   </swiper-container>  
-  <h2 class="pt-3 text-center">Preparazione ordini</h2>
-  <div class="row d-flex justify-content-center text-center pt-5">
+  <h2 class="pt-3 text-center">Preparazione Spedizioni</h2>
+  <div class="row d-flex justify-content-center align-items-center pt-5 pb-5">
     <div class="col-md-4">
-      <p>Descrizione</p>
+      <p>
+        ▶️ L'operatore di magazzino seleziona l'ordine da prepararetramite palmare.<br><br>
+        ▶️ Spara il barcode dei colli di merce per verificare che appartengano all'ordine.<br><br>
+        ▶️ Una volta verificati, convalida la presa in carico.<br><br>
+        ▶️ Stesso procedimento lo svolge con il packaging da inserire nell'ordine.<br><br>
+        ▶️ In fine indica il numero di scatole che sono state utilizzate per la spedizione e la loro tipologia.<br><br>
+        ▶️ Al completamento della preparazione, viene stampata l'etichetta di spedizione e cambiato lo stato dell'ordine.
+      </p>
     </div>
     <div class="col-md-8">
       <swiper-container
@@ -104,9 +112,80 @@
         <swiper-slide>        
           <img src="images/SoftwareGestionale/lavorazione4.png" class="img-fluid rounded shadow-jpg" (click)="openImageDetails('images/SoftwareGestionale/lavorazione4.png')">
         </swiper-slide>
+        <swiper-slide>        
+          <img src="images/SoftwareGestionale/lavorazione5.png" class="img-fluid rounded shadow-jpg" (click)="openImageDetails('images/SoftwareGestionale/lavorazione5.png')">
+        </swiper-slide>
       </swiper-container>
     </div>
   </div>
+  <h2 class="pt-3 text-center">Preparazione Ordini E-Commerce</h2>
+  <div class="row d-flex justify-content-center align-items-center pt-5 pb-5">
+    <div class="col-md-4">
+      <p>
+        ▶️ L'operatore di magazzino seleziona l'ordine da prepararetramite palmare.<br><br>
+        ▶️ Si apre il pannello di dettaglio con i prodotti da inserire.<br><br>
+        ▶️ Tramite il palmare o scanner di codice a barre viene verificato di aver preso i prodotti giusti e la quantità giusta.<br><br>        
+        ▶️ Al completamento della preparazione, viene stampata l'etichetta di spedizione e cambiato lo stato dell'ordine.
+      </p>
+    </div>
+    <div class="col-md-8">
+      <swiper-container
+        class="mySwiper mb-5"
+        effect="coverflow"
+        navigation="true"
+        pagination="true"
+        centered-slides="true"
+        loop="false"
+        slides-per-view="1.2"
+        space-between="30">
+
+        <swiper-slide>
+          <img src="images/SoftwareGestionale/SezioneEcommerce.png" class="img-fluid rounded shadow-jpg" (click)="openImageDetails('images/SoftwareGestionale/SezioneEcommerce.png')">        
+        </swiper-slide>
+        <swiper-slide>
+          <img src="images/SoftwareGestionale/PreparazioneEcommerce.png" class="img-fluid rounded shadow-jpg" (click)="openImageDetails('images/SoftwareGestionale/PreparazioneEcommerce.png')">        
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  </div>
+  <h2 class="pt-3 text-center">Gestioner Resi</h2>
+  <div class="row d-flex justify-content-center align-items-center pt-5 pb-5">
+    <div class="col-md-4">
+      <p>
+        ▶️ Il software importa in automatico i resi creati dall'e-commerce.<br><br>
+        ▶️ Crea le etichette al corriere prestabilito.<br><br>
+        ▶️ Manda la mail al cliente con l'etichetta di reso e le istruzioni di restituzione.<br><br>        
+        ▶️ Monitora lo stato del reso e aggiorna il tracking in automatico.<br><br>        
+        ▶️ Una volta ricevuto il reso, l'operatore di magazzino può collegarsi all'ordine iniziale per capire se si tratta di un reso parziale o totale.<br><br>
+        ▶️ In fine l'operatore può convalidare il reso ed emettere il rimborso al cliente.
+      </p>
+    </div>
+    <div class="col-md-8">
+      <img src="images/SoftwareGestionale/SezioneResi.png" class="img-fluid rounded shadow-jpg" style="cursor: pointer;" (click)="openImageDetails('images/SoftwareGestionale/SezioneResi.png')">
+    </div>
+  </div>
+
+  <p class="text-center pt-5 pb-3">In ogni sezione è possibile ricercare le spedizioni tramite filtri,visualizzare il tracking della spedizione o del reso e poterne visualizzare i dettagli.</p>
+  <swiper-container
+        class="mySwiper mb-5"
+        effect="coverflow"
+        navigation="true"
+        pagination="true"
+        centered-slides="true"
+        loop="false"
+        slides-per-view="1.5"
+        space-between="30">
+
+        <swiper-slide>        
+          <img src="images/SoftwareGestionale/Filtri.png" class="img-fluid rounded shadoxw-jpg" (click)="openImageDetails('images/SoftwareGestionale/Filtri.png')">
+        </swiper-slide>
+        <swiper-slide>
+          <img src="images/SoftwareGestionale/Tracking.png" class="img-fluid rounded shadow-jpg" (click)="openImageDetails('images/SoftwareGestionale/Tracking.png')">        
+        </swiper-slide>
+        <swiper-slide>        
+          <img src="images/SoftwareGestionale/DettagliSpedizione.png" class="img-fluid rounded shadoxw-jpg" (click)="openImageDetails('images/SoftwareGestionale/DettagliSpedizione.png')">
+        </swiper-slide>
+      </swiper-container>
 </div>
 
 @if (selectedImage) {
